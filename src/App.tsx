@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import TechnologyGrid from "./TechnologyGrid";
 import type {Technology} from "./types";
 import rawData from "./technologies.json";
+import Footer from "./Footer";
 
 function App() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
@@ -20,7 +21,7 @@ function App() {
   }, []);
 
   const addToStack = (tech: Technology) => {
-    if (stack.find((t) => t.id === tech.id)) return; // toast added in challenge step
+    if (stack.find((t) => t.id === tech.id)) return; 
     setStack([...stack, tech]);
   };
 
@@ -45,6 +46,7 @@ function App() {
           onRemoveAll={removeAll}
         />
       )}
+      <Footer />
     </div>
   );
 }
