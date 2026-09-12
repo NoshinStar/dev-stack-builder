@@ -1,3 +1,5 @@
+import logo from "./assets/logo-text.png";
+
 const productLinks = ["Home", "Technologies", "Projects"];
 const companyLinks = ["About", "Contact", "Careers"];
 const legalLinks = ["Privacy Policy", "Terms of Service"];
@@ -9,13 +11,8 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
                     <div className="md:col-span-1">
-                        <div className="flex items-centergap-2 mb-3">
-                            <div className="w-8 h-8 rounded-lg bg-brand-gradient flex items-center justify-center text-white font-bold text-sm">
-                                DS
-                            </div>
-                            <span className="font-bold text-lg text-gray-900">
-                                Dev<span className="bg-brand-gradient bg-clip-text text-transparent">Stack</span>
-                            </span>
+                        <div className="flex items-center gap-2 mb-3">
+                            <img src={logo} alt="Dev Stack logo" className="h-8" />
                         </div>
                         <p className="text-sm text-gray-500 mb-4">
                             Curated tools, technologies, and resources for developers building modern software.

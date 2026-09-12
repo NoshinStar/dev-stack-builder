@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "./assets/logo-text.png";
 
 const navLinks = ["Home", "Technologies", "Projects", "About", "Contact"];
 
@@ -22,15 +23,7 @@ export default function Navbar() {
                         </svg>
                     </button>
 
-                    <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-brand-gradient flex items-center justify-center text-white font-bold text-sm">
-                            DS
-                        </div>
-                        <span className="font-bold text-lg text-gray-900">
-                            Dev
-                            <span className="bg-brand-gradient bg-clip-text text-transparent">Stack</span>
-                        </span>
-                    </div>
+                    <img src={logo} alt="Dev Stack logo" className="h-8" />
 
                     <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link, i) => (
