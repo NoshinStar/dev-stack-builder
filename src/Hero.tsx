@@ -1,4 +1,4 @@
-
+import heroImg from "./assets/banner-stack.png";
 
 export default function Hero() {
   return (
@@ -34,10 +34,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: banner image */}
         <div className="flex justify-center">
           <img
-            src="/src/assets/banner-stack.png"
+            src={heroImg}
             alt="Development stack illustration"
             className="w-64 md:w-80"
           />
