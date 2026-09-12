@@ -39,7 +39,7 @@ function App() {
     setStack(stack.filter((t) => t.id !== id));
 
     if (removedTech) {
-      toast.info(`${removedTech.name} remove from your stack`);
+      toast.info(`${removedTech.name} removed from your stack`);
     }
   };
 
