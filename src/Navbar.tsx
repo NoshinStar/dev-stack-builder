@@ -32,6 +32,18 @@ export default function Navbar() {
                         </span>
                     </div>
 
+                    <div className="hidden md:flex items-center gap-8">
+                        {navLinks.map((link, i) => (
+                            <a
+                                key={link}
+                                href="#"
+                                className={`text-sm font-medium ${i === 0 ? "text-pink-600" : "text-gray-600 hover:text-gray-900"}`}
+                            >
+                                {link}
+                            </a>
+                        ))}
+                    </div>
+
                     <div className="flex items-center gap-4">
                         <a href="#" className="hidden sm:block text-sm font-medium text-gray-700">
                             Sign In
@@ -52,7 +64,6 @@ export default function Navbar() {
                     </div>
                 )}
             </div>
-        </nav >
-
+        </nav>
     )
 }
