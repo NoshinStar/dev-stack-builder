@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import './App.css'
 import Navbar from "./Navbar";
 import Hero from "./Hero";
@@ -6,6 +7,29 @@ import type {Technology} from "./types";
 import rawData from "./technologies.json";
 
 function App() {
+  const [technologies, setTechnologies] = useState<Technology[]>([]);
+  const [stack, setStack] = useState<Technology[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTechnologies(rawData as Technology[]);
+      setLoading(false);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const addToStack = (tech: Technology) => {
+    if (stack.find((t) => t.id === tech.id)) return; // toast added in challenge step
+    setStack([...stack, tech]);
+  };
+
+  const removeFromStack = (id: string) => {
+    setStack(stack.filter((t) => t.id !== id));
+  };
+
+  const removeAll = () => setStack([]);
+
   return (
     <div>
       <Navbar />
@@ -25,4 +49,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
